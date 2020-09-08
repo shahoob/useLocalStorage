@@ -1,36 +1,58 @@
-# react-hooks-uselocalstorage
+# useLocalStorage - React custom hook
+React custom Hook to manage [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
-> useLocalStorage React Hook to easily handle the local storage
 
-[![NPM](https://img.shields.io/npm/v/react-hooks-uselocalstorage.svg)](https://www.npmjs.com/package/react-hooks-uselocalstorage) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+## Why useLocalStorage?
+With this hook, you can handle your localStorage:
+- Manage and use it as a simple [React State](https://reactjs.org/docs/hooks-reference.html#usestate).
+- Don't need to call the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) interface.
 
-## Install
-
-```bash
-npm install --save react-hooks-uselocalstorage
-```
+## TL;DR;
+> **const** [storageVariable, setStorageVariable] = **useLocalStorage**('storage data');
 
 ## Usage
+Just install:
 
-```tsx
-import * as React from 'react'
+```console
+npm install react-hook-uselocalstorage
+```
 
-import { useMyHook } from 'react-hooks-uselocalstorage'
+And import the hook:
 
-const Example = () => {
-  const example = useMyHook()
+```javascript
+import useLocalStorage from 'react-hook-uselocalstorage';
+```
+
+Use it in your component:
+
+```javascript
+import React, { useRef } from 'react'
+import useLocalStorage from 'react-hooks-uselocalstorage'
+
+const App = () => {
+  const [storageVariable, setStorageVariable] = useLocalStorage('storage data');
+  const inputRef = useRef(null);
+
+  const clickHandler = () => {
+    setStorageVariable(inputRef.current.value);
+  }
+
   return (
     <div>
-      {example}
+      <h2>{storageVariable}</h2>
+
+      <input ref={inputRef} type='text' />
+      <button onClick={clickHandler}>Set</button>
     </div>
   )
 }
+
+export default App
+
 ```
 
+## LIVE Example
+([Check it in deployed example](https://github.com/franlol/useModal-example))
+
 ## License
-
 MIT © [franlol](https://github.com/franlol)
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
