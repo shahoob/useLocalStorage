@@ -1,10 +1,10 @@
 {
-  "name": "react-hooks-uselocalstorage",
+  "name": "react-hook-uselocalstorage",
   "version": "1.0.0",
-  "description": "useLocalStorage React Hook to easily handle the local storage",
+  "description": "useLocalStorage React custom Hook",
   "author": "franlol",
   "license": "MIT",
-  "repository": "franlol/react-hooks-uselocalstorage",
+  "repository": "franlol/react-hook-uselocalstorage",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
