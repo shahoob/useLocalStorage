@@ -1,23 +1,19 @@
-import * as React from 'react';
+import { useState, Dispatch } from 'react';
+import { THook } from './useLocalStorage.d';
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState<{
-    counter: number;
-  }>({
-    counter: 0
-  });
+const useLocalStorage: THook = (key: string) => {
+  if (typeof window === 'undefined' || typeof key !== 'string' || !key) {
+    return [null, (_: string) => null];
+  }
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++;
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval);
-    };
-  }, []);
+  const [value, setValue] = useState<string>(window.localStorage.getItem(key) || '');
 
-  return counter;
-};
+  const setter: Dispatch<string> = (newValue: string) => {
+    setValue(newValue);
+    window.localStorage.setItem(key, newValue);
+  }
+
+  return [value, setter];
+}
+
+export default useLocalStorage;

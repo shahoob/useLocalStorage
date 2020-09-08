@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
-import { useMyHook } from 'react-hooks-uselocalstorage'
+import useLocalStorage from 'react-hooks-uselocalstorage'
 
 const App = () => {
-  const example = useMyHook()
+  const [ls1, setLs1] = useLocalStorage('holae');
+  const inputRef = useRef(null);
+
+  const clickHandler = () => {
+    setLs1(inputRef.current.value)
+  }
+
   return (
     <div>
-      {example}
+      <h2>{ls1}</h2>
+      <input ref={inputRef} type='text' />
+      <button onClick={clickHandler}>Set</button>
     </div>
   )
 }
+
 export default App
