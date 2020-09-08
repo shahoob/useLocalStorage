@@ -4,7 +4,7 @@
   "description": "useLocalStorage React custom Hook",
   "author": "franlol",
   "license": "MIT",
-  "repository": "franlol/react-hook-uselocalstorage",
+  "repository": "https://github.com/franlol/uselocalstorage",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

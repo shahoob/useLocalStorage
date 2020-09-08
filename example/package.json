@@ -1,6 +1,6 @@
 {
   "name": "react-hook-uselocalstorage-example",
-  "homepage": "https://github.com/franlol/useLocalStorage",
+  "homepage": "https://github.com/franlol/uselocalstorage",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
