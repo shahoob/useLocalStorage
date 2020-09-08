@@ -1,6 +1,6 @@
 {
-  "short_name": "react-hooks-uselocalstorage",
-  "name": "react-hooks-uselocalstorage",
+  "short_name": "react-hook-uselocalstorage",
+  "name": "react-hook-uselocalstorage",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

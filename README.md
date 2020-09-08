@@ -27,7 +27,7 @@ Use it in your component:
 
 ```javascript
 import React, { useRef } from 'react'
-import useLocalStorage from 'react-hooks-uselocalstorage'
+import useLocalStorage from 'react-hook-uselocalstorage'
 
 const App = () => {
   const [storageVariable, setStorageVariable] = useLocalStorage('storage data');
