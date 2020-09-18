@@ -51,8 +51,8 @@ export default App
 
 ```
 
-## LIVE Example
-([Check it in deployed example](https://github.com/franlol/useModal-example))
+<!-- ## LIVE Example
+([Check it in deployed example](https://github.com/franlol/useModal-example)) -->
 
 ## License
 MIT © [franlol](https://github.com/franlol)
