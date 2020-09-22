@@ -1,13 +1,13 @@
 # useLocalStorage - React custom hook
 React custom Hook to manage [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
+#### TL;DR;
+![](https://github.com/franlol/useLocalStorage/blob/master/example/public/readme.png)
+
 ## Why useLocalStorage?
 With this hook, you can handle your localStorage:
 - Manage and use it as a simple [React State](https://reactjs.org/docs/hooks-reference.html#usestate).
 - Don't need to call the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) interface.
-
-## TL;DR;
-> **const** [storageVariable, setStorageVariable] = **useLocalStorage**('storage data');
 
 ## Usage
 Just install:
