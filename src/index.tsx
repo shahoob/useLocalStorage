@@ -1,16 +1,16 @@
 import { useState, Dispatch } from 'react';
 import { THook } from './useLocalStorage.d';
 
-const useLocalStorage: THook = (key: string) => {
-  if (typeof window === 'undefined' || typeof key !== 'string' || !key) {
-    return [null, (_: string) => null];
+const useLocalStorage: THook<T> = <T extends unknown>(key: string, defaultValue: T = null) => {
+  if (!window) {
+    throw new Error('"window" is falsy/undefined');
   }
 
-  const [value, setValue] = useState<string>(window.localStorage.getItem(key) || '');
+  const [value, setValue] = useState<T>(window.localStorage.getItem(key) || defaultValue);
 
-  const setter: Dispatch<string> = (newValue: string) => {
-    setValue(newValue);
-    window.localStorage.setItem(key, newValue);
+  const setter: Dispatch<T> = (newValue: T) => {
+    setValue(JSON.stringify(newValue));
+    window.localStorage.setItem(key, JSON.stringify(newValue));
   }
 
   return [value, setter];
