@@ -1,3 +1,3 @@
 import { Dispatch } from 'react';
 
-export type THook = (key: string) => [(string | null), Dispatch<string>];
+export type THook<T> = (key: string) => [(T | null), Dispatch<T>];
